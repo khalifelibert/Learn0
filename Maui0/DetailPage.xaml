@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui0.DetailPage"
+             Title="DetailPage"
+             xmlns:viewmodel="clr-namespace:Maui0.ViewModel"
+             x:DataType="viewmodel:DetailViewModel">
+
+    <Grid ColumnSpacing="50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            
+
+        </Grid.ColumnDefinitions>
+
+
+        <StackLayout>
+            <VerticalStackLayout 
+                Grid.Column="0"
+                Grid.Row="0">
+                <Image
+                    Source="dotnet_bot.png"
+                    HeightRequest="50"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout
+                 Grid.Column="0"
+                 Grid.Row="1">
+                <Label
+                    Text="{Binding Text}"
+                    FontSize="25"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+                <Button 
+                    Text="Back to menu"
+                    Command="{Binding BackCommand}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+        </StackLayout>
+
+    </Grid>
+
+
+</ContentPage>
